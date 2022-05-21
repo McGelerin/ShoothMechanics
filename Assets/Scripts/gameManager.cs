@@ -42,5 +42,6 @@ public enum GameStatus
 public enum FPSMode
 {
     LowPerformance = 10,
-    Default = 60
+    Default = 60,
+    MaxPerformance = 120
 }
