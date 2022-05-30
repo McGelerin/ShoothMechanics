@@ -1,1 +1,1 @@
-# Shoot Mekaniği
+# Shooth Mekaniği
