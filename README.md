@@ -1,2 +1,1 @@
-# Hit&Run-MuhammedCanGELERIN
- Update
+# Shoot Mekaniği
