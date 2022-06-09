@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
     public static GameStatus GameStatusCache;
     public TargetController TargetController;
-    [Header("FPS Settings")]
-    [SerializeField] private FPSMode _fpsMode;
 
-    public static gameManager Instance { get; private set; }
+    public static GameManager Instance { get; private set; }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -27,9 +25,6 @@ public class gameManager : MonoBehaviour
     private void Start()
     {
         GameStatusCache = GameStatus.START;
-        #if UNITY_EDITOR
-                Application.targetFrameRate = (int)_fpsMode;
-        #endif  
     }
 
 }
@@ -37,11 +32,4 @@ public enum GameStatus
 {
     START,
     END
-}
-
-public enum FPSMode
-{
-    LowPerformance = 10,
-    Default = 60,
-    MaxPerformance = 120
 }

@@ -34,7 +34,7 @@ public class Bomb : MonoBehaviour
                         nearBy.transform.parent.GetChild(j).GetComponent<Rigidbody>().AddExplosionForce(explosionForce, nearBy.transform.position, radius);
                         nearBy.transform.parent.GetChild(j).GetComponent<MeshRenderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
                     }
-                gameManager.Instance.TargetController.DecreaseTargetCount();
+                GameManager.Instance.TargetController.DecreaseTargetCount();
                 }
             isMovement = false;
             transform.position = spawnPosition; 

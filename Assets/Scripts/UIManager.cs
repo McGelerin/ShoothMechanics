@@ -16,14 +16,13 @@ public class UIManager : MonoBehaviour
         inGamePanel.SetActive(true);
         endGamePanel.SetActive(false);
         percentCacher = 0;
-        targetCountCache = gameManager.Instance.TargetController.targetCount;
-        Debug.Log(targetCountCache);
+        targetCountCache = GameManager.Instance.TargetController.TargetCount;
     }
 
     private void LateUpdate()
     {
         percentCalculate();
-        if (gameManager.GameStatusCache == GameStatus.END)
+        if (GameManager.GameStatusCache == GameStatus.END)
         {
             StartCoroutine("gameFinnish");
         }
@@ -41,7 +40,7 @@ public class UIManager : MonoBehaviour
 
     public void percentCalculate()
     {
-        percentCacher = (targetCountCache -gameManager.Instance.TargetController.targetCount) / targetCountCache *100;
+        percentCacher = (targetCountCache -GameManager.Instance.TargetController.TargetCount) / targetCountCache *100;
         percentText.text = "%" + (((int)percentCacher).ToString());
     }
 
